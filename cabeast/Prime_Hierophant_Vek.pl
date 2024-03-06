@@ -23,6 +23,15 @@ sub EVENT_SAY {
 		quest::say("Here is the second volume of the book you requested, may it serve you well!");
 		quest::summonitem(51122); # Item: Tradeskill Basics : Volume II
 	}
+	if($text=~/Special Potion/i){
+		quest::say("It is a most lecherous distillment and has been the savior of many. Making it is a complicated procedure and collecting the ingredients is a task not for the average scholar. First one must melt the rare [gray ice] in a pot and boil 2 [pondfish spines] until the poison is extracted. Then take the extraction along with a portion of Hopeless Willow Moss and brew this with plain water in a common bottle. After you have the potion force one of our froglok workers to drink it. As it suffers and its life melts into a puddle you must quickly collect the remains. Bring back the ultimate product of that suffering, along with 2 fire emeralds and you will know sacrifice.");
+	}
+	if($text=~/pondfish spines/i){
+		quest::say("There is a small spring that is the father of two streams. One leads to the ocean while the other is a tributary to the great Lake of Ill Omen. Due to the mineral-rich waters of the spring, many fish in the area have developed poison-based defenses. Some of the larger fish are adorned with spines that carry a deadly poison. These are the spines you must gather.");
+	}
+	if($text=~/gray ice/i){
+		quest::say("Gray ice is a very rare element found only atop the highest peaks in the region known as Frontier Mountains. It is valued for its very caustic nature and is used in many ways by our alchemists.");
+	}
 }
 
 sub EVENT_ITEM {
@@ -32,7 +41,7 @@ sub EVENT_ITEM {
 		quest::ding();
 		quest::faction(445,100); #Scaled Mystics
 		quest::faction(441,25); #Legion of Cabilis
-		quest::exp(500);
+		quest::exp(100);
 	}
 	elsif(plugin::check_handin(\%itemcount, 18462 => 1, 22917 => 1)){
 		quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
@@ -55,13 +64,24 @@ sub EVENT_ITEM {
 		quest::say("You spoke to the Brothers? You, a simple Legionnaire? Well, no matter, you are here to test your virtue of sacrifice and we will take pleasure in it as we have for generations even before the Fallen Brothers. One of our greatest allies in pain is disease. In the woods outside our fair city is a small tribe of goblins. There is a certain goblin famed for his [unique weapon]. Take this knife and use it to cut this from the goblin. Then return his weapon, the knife, a sapphire, and an opal to me.");
 		quest::summonitem(14784); # Item: Hierophant's Knife
 	}
+	elsif (plugin::check_handin(\%itemcount, 14795 =>1 )) {
+		quest::emote("chuckles scornfully!");
+		quest::say("So, the brothers still seek their redemption? Fools! They know nothing of sacrifice and because of this Cazic-Thule will never forgive them. No matter. You are here now and wish to learn. You must brew a [special potion] for us and make use of it in the name of the Mystics. Once you witness the creation's glory you will know sacrifice.");
+	}
 	elsif (plugin::check_handin(\%itemcount, 14784 =>1, 14785 =>1, 10034 =>1, 10030 =>1 )) {
-		quest::say("Well done");
+		quest::say("We thank you, $name. It is indeed a lovely specimen. I hope you were able to test its effects in the name of our Lord. But I suppose you mustn't keep the Brothers waiting. Take your reference and leave this place.");
 		quest::ding();
 		quest::summonitem(14786); # Item: Vek's Reference: Vambraces
+		quest::exp(10000);
+	}
+	elsif (plugin::check_handin(\%itemcount, 14805 =>1, 10033 =>2)) {
+		quest::say("Ahhh, yes, wonderful work indeed, Legionnaire. It's amazing your brood was not chosen to be blessed as a Scaled Mystic. Here is your reference, Syriash. Remember the suffering and pain you have caused in the name of your creator.");
+		quest::ding();
+		quest::summonitem(14787); # Item: Vek's Reference: Pauldron
 		quest::exp(10000);
 	}
   plugin::return_items(\%itemcount);
 }
 
 #Submitted by Jim Mills, with thanks to BWStripes
+

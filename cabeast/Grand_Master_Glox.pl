@@ -37,7 +37,7 @@ sub EVENT_ITEM {
 		quest::emote("sits whispering incoherently for a long moment before even regarding the note you dropped in front of him. The Grand Master suddenly snatches up the note from Xlixinar, removes a small charcoal marker from a belt pouch, and scrawls some intructions upon it. He drops the note immediately after finishing and resumes his meditation without a word.");
 		quest::summonitem(18980); # Item: Note from Glox
 	}
-	elsif (plugin::check_handin(\%itemcount, 14782 =>1, 10032 =>1 )) {
+	elsif (plugin::check_handin(\%itemcount, 14782 =>1, 10032 =>2 )) {
 		quest::emote("nods slightly");
 		quest::summonitem(14783); # Item: Glox Reference
 		quest::ding();

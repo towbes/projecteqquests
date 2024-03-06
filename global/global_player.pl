@@ -89,3 +89,24 @@ sub EVENT_CONNECT {
         }
     }
 }
+
+sub EVENT_SAY {
+    if ($text=~/#Rename/i) {
+        if ($client->GetTarget() && $client->GetTarget()->IsNPC() && $client->GetTarget()->CastToNPC()->GetOwnerID() == $userid) {
+            quest::setglobal("PetName", substr($text, 8, 64), 5, "F");
+            $client->GetTarget()->TempName(substr($text, 8, 64));
+            $client->Message(315, "Your pet's name is now set to " . substr($text, 8, 64) . ", upon respawning your pet will instantly be renamed from now on.");
+        } else {
+            $client->Message(315, "You must target your pet first.");
+        }
+    }
+}
+
+sub EVENT_SIGNAL {
+    if ($signal == 2) {
+        if (defined $qglobals{"NewName"} && length($qglobals{"NewName"}) > 0) {
+            $entity_list->GetMobByID($client->GetPetID())->TempName($qglobals{"TempName"});
+            $client->Message(315, "Your pet has been instantly renamed to '" . $qglobals{"TempName"} . "'.");
+        }
+    }
+}

@@ -28,10 +28,13 @@ sub EVENT_CLICKDOOR {
     $client->Message(4,"The globe does not seem to do anything");
   }
   if($doorid == 135) {
-    if(plugin::check_hasitem($client, 69311) && !$client->KeyRingCheck(69311)) {
+    if(plugin::check_hasitem($client, 20884) && !$client->KeyRingCheck(69311)) {
       $client->KeyRingAdd(69311);
     }
-    if(plugin::check_hasitem($client, 69312) && !$client->KeyRingCheck(69312)) {
+	if(plugin::check_hasitem($client, 69311) && !$client->KeyRingCheck(69311)) {
+      $client->KeyRingAdd(69311);
+    }
+    if(plugin::check_hasitem($client, 69312) && !$client->KeyRingCheck(69312) && !$client->KeyRingCheck(20884)) {
       $client->KeyRingAdd(69312);
     }
     if($client->KeyRingCheck(69311) || $client->KeyRingCheck(69312) || ($status > 99)) {
