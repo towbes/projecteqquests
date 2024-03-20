@@ -1,8 +1,8 @@
 local aoc_raid = {
-    expedition = { name="Plane of Fear", min_players=1, max_players=72},
-    instance   = { zone="fearplane", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
-    safereturn = { zone="feerrott", x=2491, y=-2159.26, z=4, h=227.0 }, --outside portal
-    zonein     = { x=1032, y=-834, z=100, h=260 },
+    expedition = { name="Karnor Castle", min_players=1, max_players=72},
+    instance   = { zone="karnor", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    safereturn = { zone="dreadlands", x=-1871.63, y=499.39, z=28.68, h=227.0 }, --outside portal
+    zonein     = { x=302, y=18, z=5.62, h=260 },
 }
 
 function event_say(e)
