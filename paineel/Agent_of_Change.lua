@@ -1,8 +1,8 @@
 local aoc_raid = {
-    expedition = { name="Plane of Fear", min_players=1, max_players=40},
-    instance   = { zone="fearplane", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
-    safereturn = { zone="fearplane", x=2491, y=-2159.26, z=4, h=227.0 }, --outside portal
-    zonein     = { x=1032, y=-834, z=100, h=260 },
+    expedition = { name="The Hole", min_players=1, max_players=72},
+    instance   = { zone="hole", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    safereturn = { zone="paineel", x=255.98, y=783.48, z=3.74, h=227 },
+    zonein     = { x=189.14, y=748.06, z=-89.10, h=0 },
 }
 
 function event_say(e)

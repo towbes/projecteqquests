@@ -1,8 +1,8 @@
 local aoc_raid = {
-    expedition = { name="Plane of Fear", min_players=1, max_players=40},
-    instance   = { zone="fearplane", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
-    safereturn = { zone="fearplane", x=2491, y=-2159.26, z=4, h=227.0 }, --outside portal
-    zonein     = { x=1032, y=-834, z=100, h=260 },
+    expedition = { name="Lair of Lord Nagafen", min_players=1, max_players=72},
+    instance   = { zone="soldungb", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    safereturn = { zone="lavastorm", x=561.44, y=408, z=-45.1, h=439.25 },
+    zonein     = { x=-258.68, y=-425.21, z=-106.34, h=0 },
 }
 
 function event_say(e)

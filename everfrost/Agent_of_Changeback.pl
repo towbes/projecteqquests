@@ -21,7 +21,7 @@ sub EVENT_SAY {
     my $dz = $client->CreateExpedition($dz_zone, $dz_version, $dz_duration, $expedition_name, $min_players, $max_players);
     if ($dz) {
       $dz->SetSafeReturn("everfrost", -7010.22, 2033.74, -60.72, 315.25); # outside portal
-      $dz->SetZoneInLocation(60.93, -123.97, 3.13, 258.25); # normal zone in place
+      $dz->SetZoneInLocation(60.93, -123.97, 3.13, 2); # normal zone in place
       $dz->AddReplayLockout(32400); # immediately add a 9 hour replay lockout on creation
       quest::say("Tell me when you're [" . quest::saylink("ready") . "] to enter");
     }
