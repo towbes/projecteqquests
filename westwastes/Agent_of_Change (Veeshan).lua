@@ -1,7 +1,7 @@
 local aoc_raid = {
     expedition = { name="Temple of Veeshan", min_players=1, max_players=72},
     instance   = { zone="templeveeshan", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
-    safereturn = { zone="westwastes", x=528.11, y=-149.99, z=-196.88, h=227.0 }, --outside portal
+    safereturn = { zone="westwastes", x=435, y=-145.99, z=-195.88, h=227.0 }, --outside portal
     zonein     = { x=-499, y=-2086, z=-34.34, h=260 },
 }
 
