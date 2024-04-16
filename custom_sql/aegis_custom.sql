@@ -336,14 +336,21 @@ UPDATE temporary_table SET id = 0;
 INSERT INTO spawn2 SELECT * FROM temporary_table;
 SELECT id, spawngroupID, zone, respawntime, version from spawn2 where zone = "templeveeshan";
 update spawn2 set respawntime = 720000 where zone = "templeveeshan" and version = 1;
-
-
 DROP TABLE temporary_table;
+
+
 CREATE TEMPORARY TABLE temporary_table AS SELECT * FROM doors where zone = "templeveeshan" and version = 0;
 UPDATE temporary_table SET version = 1;
 UPDATE temporary_table SET id = 0;
 INSERT INTO doors SELECT * FROM temporary_table;
 SELECT id, doorid, zone, version from doors where zone = "templeveeshan";
+DROP TABLE temporary_table;
+
+CREATE TEMPORARY TABLE temporary_table AS SELECT * FROM zone_points where zone = "templeveeshan" and version = 0;
+UPDATE temporary_table SET version = 1;
+UPDATE temporary_table SET id = 0;
+INSERT INTO zone_points SELECT * FROM temporary_table;
+SELECT * from zone_points where zone = "templeveeshan";
 DROP TABLE temporary_table;
 
 --kael
@@ -363,6 +370,14 @@ INSERT INTO doors SELECT * FROM temporary_table;
 SELECT id, doorid, zone, version from doors where zone = "kael";
 DROP TABLE temporary_table;
 
+CREATE TEMPORARY TABLE temporary_table AS SELECT * FROM zone_points where zone = "kael" and version = 0;
+UPDATE temporary_table SET version = 1;
+UPDATE temporary_table SET id = 0;
+INSERT INTO zone_points SELECT * FROM temporary_table;
+SELECT * from zone_points where zone = "kael";
+DROP TABLE temporary_table;
+
+
 --sleeper
 CREATE TEMPORARY TABLE temporary_table AS SELECT * FROM spawn2 where zone = "sleeper" and version = 0;
 UPDATE temporary_table SET version = 1;
@@ -379,6 +394,14 @@ UPDATE temporary_table SET id = 0;
 INSERT INTO doors SELECT * FROM temporary_table;
 SELECT id, doorid, zone, version from doors where zone = "sleeper";
 DROP TABLE temporary_table;
+
+CREATE TEMPORARY TABLE temporary_table AS SELECT * FROM zone_points where zone = "sleeper" and version = 0;
+UPDATE temporary_table SET version = 1;
+UPDATE temporary_table SET id = 0;
+INSERT INTO zone_points SELECT * FROM temporary_table;
+SELECT * from zone_points where zone = "sleeper";
+DROP TABLE temporary_table;
+
 
 --growthplane
 CREATE TEMPORARY TABLE temporary_table AS SELECT * FROM spawn2 where zone = "growthplane" and version = 0;
@@ -397,6 +420,13 @@ INSERT INTO doors SELECT * FROM temporary_table;
 SELECT id, doorid, zone, version from doors where zone = "growthplane";
 DROP TABLE temporary_table;
 
+CREATE TEMPORARY TABLE temporary_table AS SELECT * FROM zone_points where zone = "growthplane" and version = 0;
+UPDATE temporary_table SET version = 1;
+UPDATE temporary_table SET id = 0;
+INSERT INTO zone_points SELECT * FROM temporary_table;
+SELECT * from zone_points where zone = "growthplane";
+DROP TABLE temporary_table;
+
 --Skyshrine already has a version 1, so we use version 2 here
 CREATE TEMPORARY TABLE temporary_table AS SELECT * FROM spawn2 where zone = "skyshrine" and version = 0;
 UPDATE temporary_table SET version = 2;
@@ -412,4 +442,11 @@ UPDATE temporary_table SET version = 2;
 UPDATE temporary_table SET id = 0;
 INSERT INTO doors SELECT * FROM temporary_table;
 SELECT id, doorid, zone, version from doors where zone = "skyshrine";
+DROP TABLE temporary_table;
+
+CREATE TEMPORARY TABLE temporary_table AS SELECT * FROM zone_points where zone = "skyshrine" and version = 0;
+UPDATE temporary_table SET version = 2;
+UPDATE temporary_table SET id = 0;
+INSERT INTO zone_points SELECT * FROM temporary_table;
+SELECT * from zone_points where zone = "skyshrine";
 DROP TABLE temporary_table;
