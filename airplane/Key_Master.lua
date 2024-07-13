@@ -17,6 +17,7 @@ function event_signal(e)
 		-- eq.set_timer("13",300000); what is this referred to?
 		eq.set_global("keeper","1",3,"H2");
 		-- supposed to be 60-85 minute timer
+		-- There is a 3min wait in place for triggering signal 2 from soul carrier script
 		-- Update on 3/3/2024 to be 15-30mins timer (milliseconds)
 		eq.set_timer("87",math.random(900000) + 900000);
 	end
