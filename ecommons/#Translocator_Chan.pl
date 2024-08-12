@@ -21,6 +21,7 @@ sub EVENT_SAY{
 [" . quest::saylink("The Overthere") . "]
 [" . quest::saylink("Plane of Hate") . "]
 [" . quest::saylink("Plane of Fear") . "]
+[" . quest::saylink("Cobaltscar") . "]
 [" . quest::saylink("Plane of Sky") . "]
 [" . quest::saylink("Bazaar") . "]
 [" . quest::saylink("Thurgadin") . "]
@@ -84,7 +85,6 @@ quest::movepc(25,-917.10,1928.21,18.31) ;
 quest::movepc(151,-838,1221,2.35) ;
   }
 
-
      if($text=~/Innothule Swamp/i)
   {
   quest::say("Off you go!");
@@ -130,6 +130,11 @@ quest::movepc(68,-220.70,2758.13,7.16) ;
   quest::movepc(78,3061.57,-2011.65,27.60);
   }
 
+  if($text=~/Cobaltscar/i)
+  {
+  quest::say("Off you go!");
+  quest::movepc(117,-1633.66,-1066.62,298.81);
+  }
       
   if($text=~/Firiona vie/i)
   {
