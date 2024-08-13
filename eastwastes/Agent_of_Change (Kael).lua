@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Kael Drakkel", min_players=1, max_players=72},
-    instance   = { zone="kael", version=0, duration=eq.seconds("7d") }, -- zone last 7d
+    instance   = { zone="kael", version=1, duration=eq.seconds("7d") }, -- zone last 7d
     safereturn = { zone="eastwastes", x=3571.81, y=-6273.32, z=152.33, h=227.0 }, --outside portal
     zonein     = { x=-633, y=-47, z=125.56, h=260 },
 }

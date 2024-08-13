@@ -1,6 +1,8 @@
 my $check;
-my $variance = int(rand(600));
-my $spawntime = 4320 + $variance;
+#my $variance = int(rand(600));
+my $variance = 0;
+#my $spawntime = 4320 + $variance;
+my $spawntime = 1 + $variance;
 
 sub EVENT_SPAWN {
   quest::settimer("cursed",60);
