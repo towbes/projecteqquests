@@ -15,7 +15,7 @@ function event_say(e)
 		end
 	elseif(e.message:findi("request")) then
 		local dz = e.other:CreateExpedition(aoc_raid)
-		dz:AddReplayLockout(eq.seconds("9h")) -- 9 hour lockout
+		dz:AddReplayLockout(eq.seconds("1d")) -- 9 hour lockout
 		e.self:Say("Tell me when you're [" .. eq.say_link("ready") .. "] to enter")
 	elseif(dz:GetZoneName() == aoc_raid.instance.zone and e.message:findi("ready")) then
 		e.other:MovePCDynamicZone(aoc_raid.instance.zone)
