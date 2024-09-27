@@ -49,7 +49,7 @@ my $bucket_value = quest::get_data($bucket_key);
     elsif ($check == 0 && $bucket_value != 1) {
       quest::set_data($bucket_key, 1, "M$spawntime");
       quest::spawn2(124155,0,0,-739.4,517.2,121,510); # NPC: #Vulak`Aerr
-      #quest::depop_withtimer();
+      quest::depop_withtimer();
       #quest::setglobal("vulak",1,2,"M$spawntime");
     }
   }

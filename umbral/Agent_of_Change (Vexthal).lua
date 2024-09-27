@@ -14,10 +14,18 @@ function event_say(e)
 			e.self:Say("Would you like to [" .. eq.say_link("request") .. "] the expedition?")
 		end
 	elseif(e.message:findi("request")) then
-		local dz = e.other:CreateExpedition(aoc_raid)
-		dz:AddReplayLockout(eq.seconds("1d")) -- 9 hour lockout
-		e.self:Say("Tell me when you're [" .. eq.say_link("ready") .. "] to enter")
+		if e.other:KeyRingCheck(22198) then
+			local dz = e.other:CreateExpedition(aoc_raid)
+			dz:AddReplayLockout(eq.seconds("1d")) -- 9 hour lockout
+			e.self:Say("Tell me when you're [" .. eq.say_link("ready") .. "] to enter")
+		else
+			e.self:Say("You do not have the key")
+		end
 	elseif(dz:GetZoneName() == aoc_raid.instance.zone and e.message:findi("ready")) then
-		e.other:MovePCDynamicZone(aoc_raid.instance.zone)
+		if e.other:KeyRingCheck(22198) then
+			e.other:MovePCDynamicZone(aoc_raid.instance.zone)
+		else
+			e.self:Say("You do not have the key")
+		end
 	end
 end

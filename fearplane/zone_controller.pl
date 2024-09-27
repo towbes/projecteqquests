@@ -29,12 +29,12 @@ sub EVENT_SPAWN_ZONE {
   
 }
 
-sub EVENT_DEATH_ZONE {
-  if ($killed_npc_id == 72003 || $killed_npc_id == 72100) { # npc: Cazic Thule
-    my $dz = quest::get_expedition();
-    if ($dz) {
-      $dz->AddLockout("Plane of Fear", 259200); # 3 day lockout
-	  $dz->AddReplayLockout(259200); # 3 day lockout
-    }
-  }
-}
+#sub EVENT_DEATH_ZONE {
+#  if ($killed_npc_id == 72003 || $killed_npc_id == 72100) { # npc: Cazic Thule
+#    my $dz = quest::get_expedition();
+#    if ($dz) {
+#      $dz->AddLockout("Plane of Fear", 259200); # 3 day lockout
+#	  $dz->AddReplayLockout(259200); # 3 day lockout
+#    }
+#  }
+#}
