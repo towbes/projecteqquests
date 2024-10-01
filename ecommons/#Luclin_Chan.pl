@@ -8,6 +8,7 @@ sub EVENT_SAY{
 [" . quest::saylink("Ssra Temple") . "] 
 [" . quest::saylink("Sanctus Seru") . "] 
 [" . quest::saylink("The Nexus") . "]
+[" . quest::saylink("Shar Vahl") . "]
 "
 );
   }
@@ -30,6 +31,12 @@ sub EVENT_SAY{
   quest::say("Off you go!");
  quest::movepc(152,0,0,-28,119) ;
   }
+
+   if($text=~/Shar Vahl/i)
+  {
+  quest::say("Off you go!");
+  quest::movepc(155,128.23,-840.38,-188.25);
+  } 
  
 } 
 

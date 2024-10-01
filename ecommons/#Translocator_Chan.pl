@@ -25,7 +25,7 @@ sub EVENT_SAY{
 [" . quest::saylink("Plane of Sky") . "]
 [" . quest::saylink("Bazaar") . "]
 [" . quest::saylink("Thurgadin") . "]
-[" . quest::saylink("Shar Vahl") . "]
+[" . quest::saylink("West Wastes") . "]
 "
 );
   }
@@ -153,10 +153,10 @@ quest::movepc(68,-220.70,2758.13,7.16) ;
   quest::movepc(71,539,1384,-666.99);
   }  
 
-   if($text=~/Shar Vahl/i)
+   if($text=~/West Wastes/i)
   {
   quest::say("Off you go!");
-  quest::movepc(155,128.23,-840.38,-188.25);
+  quest::movepc(120,-3746,-4368,-114);
   } 
  
 } 
